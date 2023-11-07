@@ -1,9 +1,11 @@
 import SwiftUI
 
 struct ContentView: View {
+    @StateObject private var userSettings = UserSettings()
     
     var body: some View {
         MapView()
+            .environmentObject(userSettings)
     }
 }
 

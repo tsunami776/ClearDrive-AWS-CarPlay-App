@@ -11,7 +11,8 @@ struct SettingsView: View {
     
     @Binding var showSettings: Bool
     @State private var weatherAlerts = false
-    @State private var airQualityNotification = false
+    
+    @EnvironmentObject var userSettings: UserSettings
     
     var body: some View {
         Text("Settings")
@@ -26,7 +27,7 @@ struct SettingsView: View {
                         Text("Weather Alerts")
                     }
                     
-                    Toggle(isOn: $airQualityNotification) {
+                    Toggle(isOn: $userSettings.isAirQualityNotificationEnabled) {
                         Text("Air Quality Notification")
                     }
                 }
