@@ -17,6 +17,7 @@ struct MapView: View {
     @State private var showWeatherView = false
     @State private var showPOIView = false
     @State private var showMessagesView = false
+    @State private var showSettingsView = false
     
     var body: some View {
         ZStack {
@@ -55,6 +56,12 @@ struct MapView: View {
                             messages: $vehicleMessageService.messages
                         )
                     }
+                    MapButton(image: "gear", action: {showSettingsView.toggle()})
+                        .sheet(isPresented: $showSettingsView) {
+                            SettingsView(
+                                showSettings: $showSettingsView
+                            )
+                        }
                 }
             }
         }
@@ -64,8 +71,8 @@ struct MapView: View {
     }
 }
 
-struct MapView_Previews: PreviewProvider {
-    static var previews: some View {
-        MapView()
-    }
-}
+//struct MapView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        MapView()
+//    }
+//}
