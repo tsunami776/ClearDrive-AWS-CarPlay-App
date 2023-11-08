@@ -59,7 +59,9 @@ struct MapView: View {
                     MapButton(image: "gear", action: {showSettingsView.toggle()})
                         .sheet(isPresented: $showSettingsView) {
                             SettingsView(
-                                showSettings: $showSettingsView
+                                showSettings: $showSettingsView,
+                                latitude: locationService.latitude,
+                                longitude: locationService.longitude
                             )
                         }
                 }

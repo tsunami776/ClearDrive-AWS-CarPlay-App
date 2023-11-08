@@ -192,9 +192,9 @@ class CarPlaySceneDelegate: UIResponder, CPTemplateApplicationSceneDelegate {
                 template.items.append(CPInformationItem(title: "Air Quality Index", detail: String(result.aqIndex)))
                 
                 // Now present AQI alert
-                DispatchQueue.main.async {
-                    self.presentAQIAlert(aqi: Int(result.aqIndex))
-                }
+//                DispatchQueue.main.async {
+//                    self.presentAQIAlert(aqi: Int(result.aqIndex))
+//                }
             } catch {
                 print("Error fetching weather: \(error)")
             }
