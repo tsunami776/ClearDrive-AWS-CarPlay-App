@@ -143,6 +143,43 @@ class CarPlaySceneDelegate: UIResponder, CPTemplateApplicationSceneDelegate {
         }
     }
     
+    func presentAQIAlert(aqi: Int) {
+        let title: String
+        let message: String
+        
+        switch aqi {
+        case 0...50:
+            title = "Good AQI"
+            message = "Air quality is considered satisfactory, and air pollution poses little or no risk."
+        case 51...100:
+            title = "Moderate AQI"
+            message = "Air quality is acceptable; however, there may be a risk for some people, particularly those who are unusually sensitive to air pollution."
+        case 101...150:
+            title = "Unhealthy for Sensitive Groups"
+            message = "Members of sensitive groups may experience health effects. The general public is not likely to be affected."
+        case 151...200:
+            title = "Unhealthy AQI"
+            message = "Everyone may begin to experience health effects; members of sensitive groups may experience more serious health effects."
+        case 201...300:
+            title = "Very Unhealthy AQI"
+            message = "Health alert: everyone may experience more serious health effects."
+        case 301...:
+            title = "Hazardous AQI"
+            message = "Health warnings of emergency conditions. The entire population is more likely to be affected."
+        default:
+            return // No alert for invalid values
+        }
+        
+        let okAction = CPAlertAction(title: "OK", style: .default, handler: { _ in
+            self.interfaceController?.dismissTemplate(animated: true, completion: nil)
+        })
+            
+        // Note that the `titleVariants` now includes both the title and message
+        let alertTemplate = CPAlertTemplate(titleVariants: [title, message], actions: [okAction])
+        
+        self.interfaceController?.presentTemplate(alertTemplate, animated: true, completion: nil)
+    }
+    
     func getWeather (template: CPInformationTemplate, latitude: Double, longitude: Double, city: String) async {
         
         Task {
@@ -153,6 +190,11 @@ class CarPlaySceneDelegate: UIResponder, CPTemplateApplicationSceneDelegate {
                 template.items.append(CPInformationItem(title: "City", detail: city))
                 template.items.append(CPInformationItem(title: "Temperature", detail: String(result.temperature)))
                 template.items.append(CPInformationItem(title: "Air Quality Index", detail: String(result.aqIndex)))
+                
+                // Now present AQI alert
+                DispatchQueue.main.async {
+                    self.presentAQIAlert(aqi: Int(result.aqIndex))
+                }
             } catch {
                 print("Error fetching weather: \(error)")
             }

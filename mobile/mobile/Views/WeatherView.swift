@@ -68,11 +68,6 @@ struct WeatherView: View {
             aqIndex = result.aqIndex
             temperature = result.temperature
             
-            // Trigger the alert if the AQI is over 20
-//            if aqIndex > 10 && userSettings.isAirQualityNotificationEnabled {
-//                showAlert = true
-//            }
-            
             // Check the AQI and decide if we should show an alert
             if userSettings.isAirQualityNotificationEnabled {
                 switch aqIndex {
