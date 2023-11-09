@@ -1,4 +1,4 @@
-# CarPlay-AWS-App Practice
+# ClearDrive: AWS Apple CarPlay App
 Based on [AWS Full Stack Swift with Apple CarPlay](https://github.com/aws-samples/aws-serverless-fullstack-swift-apple-carplay-example) 
 
 ## Added features
