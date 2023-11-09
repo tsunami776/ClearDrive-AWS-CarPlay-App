@@ -44,6 +44,8 @@
 		78C8C72F1E8D6391D9857EF3 /* Location+Schema.swift in Sources */ = {isa = PBXBuildFile; fileRef = 387C50F61276751A58977372 /* Location+Schema.swift */; };
 		7FE1EE1B5960420BACFD3F5D /* amplifyconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = 3A60D2E626DE48CBACBA4063 /* amplifyconfiguration.json */; };
 		888137310A034F4B938A3501 /* Query.swift in Sources */ = {isa = PBXBuildFile; fileRef = F006CED48BAC4777AABCCFBC /* Query.swift */; };
+		9D659C202AFAF689005DD453 /* UserSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D659C1F2AFAF689005DD453 /* UserSettings.swift */; };
+		9D684E812AFAEB9E00EF82D4 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D684E802AFAEB9E00EF82D4 /* SettingsView.swift */; };
 		A4A13911029A432E9ECABD40 /* Weather+Schema.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A134D4FE1B544F1BCAD7E77 /* Weather+Schema.swift */; };
 		BE201746CF984BB5BC3812F1 /* Query+Schema.swift in Sources */ = {isa = PBXBuildFile; fileRef = C486BC6F23F74B379571BBD4 /* Query+Schema.swift */; };
 		CB6A389B3A0F4BD2AEBC7177 /* Subscription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58FE0A6DA0A64E288DDD7AA9 /* Subscription.swift */; };
@@ -87,6 +89,8 @@
 		5F05F297469847E2B55342EA /* awsconfiguration.json */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; path = awsconfiguration.json; sourceTree = "<group>"; };
 		6A134D4FE1B544F1BCAD7E77 /* Weather+Schema.swift */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.swift; name = "Weather+Schema.swift"; path = "amplify/generated/models/Weather+Schema.swift"; sourceTree = "<group>"; };
 		9675B0B847B14E69B8A4A546 /* Place.swift */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.swift; name = Place.swift; path = amplify/generated/models/Place.swift; sourceTree = "<group>"; };
+		9D659C1F2AFAF689005DD453 /* UserSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettings.swift; sourceTree = "<group>"; };
+		9D684E802AFAEB9E00EF82D4 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		AA1E90F2050E40D3BBE94074 /* Weather.swift */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.swift; name = Weather.swift; path = amplify/generated/models/Weather.swift; sourceTree = "<group>"; };
 		C486BC6F23F74B379571BBD4 /* Query+Schema.swift */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.swift; name = "Query+Schema.swift"; path = "amplify/generated/models/Query+Schema.swift"; sourceTree = "<group>"; };
 		CC607458548E456C8742735D /* Place+Schema.swift */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.swift; name = "Place+Schema.swift"; path = "amplify/generated/models/Place+Schema.swift"; sourceTree = "<group>"; };
@@ -185,6 +189,7 @@
 		1C6AA6022625FBCA009BB126 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				9D659C1F2AFAF689005DD453 /* UserSettings.swift */,
 				1C1E5CF6262609AD00ED9C61 /* FormButton.swift */,
 				1C1E5CFB262609AD00ED9C61 /* LoadingView.swift */,
 				1C1E5CF7262609AD00ED9C61 /* MapButton.swift */,
@@ -194,6 +199,7 @@
 				1C1E5CFC262609AD00ED9C61 /* WeatherView.swift */,
 				1C1E5CF32626098400ED9C61 /* CarPlayMapView.swift */,
 				1C6AA5EF2625F591009BB126 /* ContentView.swift */,
+				9D684E802AFAEB9E00EF82D4 /* SettingsView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -316,6 +322,7 @@
 				1C6AA5EE2625F591009BB126 /* SceneDelegate.swift in Sources */,
 				1C6AA5F02625F591009BB126 /* ContentView.swift in Sources */,
 				1C1E5D00262609AD00ED9C61 /* MapView.swift in Sources */,
+				9D684E812AFAEB9E00EF82D4 /* SettingsView.swift in Sources */,
 				1C26A4B82628D7EF00C9474F /* CarPlaySceneDelegate.swift in Sources */,
 				65F64C2CF9384D7484D427A7 /* AmplifyModels.swift in Sources */,
 				1C1E5D02262609AD00ED9C61 /* LoadingView.swift in Sources */,
@@ -328,6 +335,7 @@
 				1C1E5D01262609AD00ED9C61 /* PlacesView.swift in Sources */,
 				1C1E5CED2626050400ED9C61 /* DataService.swift in Sources */,
 				1C1E5D0C26260A1C00ED9C61 /* Subscriptions.swift in Sources */,
+				9D659C202AFAF689005DD453 /* UserSettings.swift in Sources */,
 				888137310A034F4B938A3501 /* Query.swift in Sources */,
 				1C1E5D09262609FF00ED9C61 /* VehicleMessageService.swift in Sources */,
 				1C1E5CFF262609AD00ED9C61 /* MessagesView.swift in Sources */,

@@ -57,5 +57,22 @@ class DataService {
             throw error
         }
     }
+    
+    func createVehicleMessage(message: String, owner: String, timestamp: String) async throws-> VehicleMessage  {
+
+        do {
+            let result = try await Amplify.API.mutate(request: .createVehicleMessage(message: message, owner: owner, timestamp: timestamp))
+
+            switch result {
+            case .success(let item):
+                return item
+            case .failure(let error):
+                throw error
+            }
+            
+        } catch {
+            throw error
+        }
+    }
 }
 

@@ -11,7 +11,7 @@ struct MapButton: View {
             Image(systemName: image)
                 .font(.title)
                 .frame(width: 60, height: 60, alignment: .center)
-                .background(Color.gray)
+                .background(Color.blue)
                 .clipShape(Circle())
                 .foregroundColor(.white)
             }

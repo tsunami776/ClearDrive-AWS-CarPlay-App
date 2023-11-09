@@ -59,5 +59,36 @@ extension GraphQLRequest {
             responseType: Location.self,
             decodePath: operationName)
     }
+    
+    static func createVehicleMessage(message: String, owner: String, timestamp: String) -> GraphQLRequest<VehicleMessage> {
+        let operationName = "createVehicleMessage"
+        
+        let document = """
+            mutation \(operationName)($input: CreateVehicleMessageInput!) {
+              createVehicleMessage(input: $input) {
+                id
+                owner
+                timestamp
+                message
+                createdAt
+                updatedAt
+              }
+            }
+            """
+            
+        let variables: [String: Any] = [
+            "input": [
+                "message": message,
+                "owner": owner,
+                "timestamp": timestamp
+            ]
+        ]
+        
+        return GraphQLRequest<VehicleMessage>(
+            document: document,
+            variables: variables,
+            responseType: VehicleMessage.self,
+            decodePath: operationName)
+    }
 }
 
